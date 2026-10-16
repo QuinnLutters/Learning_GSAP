@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 · Callbacks &amp; batch</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .log { position: fixed; right: 16px; bottom: 16px; width: 280px; max-height: 220px; overflow: auto; z-index: 101;
+             background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+      .log p { margin: 2px 0; }
+      .watch { transition: background-color .3s, transform .3s; }
+      .watch.is-active { background: var(--green); color: #07261a; transform: scale(1.1); }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px;
+              width: min(900px, 92vw); margin: 0 auto; padding-bottom: 40px; }
+      .card { height: 140px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line);
+              display: grid; place-items: center; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">07 · Callbacks &amp; batch</span>
+      <a class="next" href="../08-scrollsmoother/">Next: ScrollSmoother →</a>
+    </header>
+    <div class="log readout" id="log"><p>callback log…</p></div>
+
+    <section class="intro">
+      <h1>Callbacks &amp; batch</h1>
+      <p class="lead">Not everything needs a tween. ScrollTrigger can just <em>tell you</em> when things happen
+        (callbacks), toggle a CSS class, or reveal many elements efficiently with <code>ScrollTrigger.batch()</code>.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Scroll past the blue box and watch the log in the bottom-right corner.</li>
+          <li>Change the batch <code>stagger</code> to <code>0.3</code> and <code>interval</code> to <code>0.5</code>.</li>
+          <li>Style <code>.watch.is-active</code> differently in index.html — class toggling means you can animate with plain CSS.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="spacer">↓ scroll ↓</div>
+    <div class="stage"><div class="box big watch">watch me</div></div>
+    <div class="spacer">now a grid of cards ↓</div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="spacer">end</div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

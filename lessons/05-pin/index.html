@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 · Pinning</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .pinned { height: 100vh; display: grid; place-items: center; background: var(--surface);
+                border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+      .scene { position: relative; width: min(700px, 90vw); height: 320px; }
+      .scene h2 { position: absolute; inset: 0; margin: 0; display: grid; place-items: center;
+                  font-size: clamp(2rem, 7vw, 4.5rem); line-height: 1; }
+      .scene .circle { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px;
+                       border-radius: 50%; background: var(--accent); }
+      .scene .readout { position: absolute; bottom: -40px; left: 0; right: 0; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">05 · Pinning</span>
+      <a class="next" href="../06-horizontal/">Next: Horizontal scroll →</a>
+    </header>
+
+    <section class="intro">
+      <h1>Pinning</h1>
+      <p class="lead"><code>pin: true</code> freezes the trigger element in place from <code>start</code> to <code>end</code>,
+        while the rest of the page keeps scrolling "behind" it. Combined with a scrubbed timeline you get the
+        classic "the page stops and something happens" effect.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Change <code>end: "+=2000"</code> to <code>"+=600"</code>. Same animation, much less scrolling.</li>
+          <li>Set <code>pin: false</code> to see what the timeline looks like without pinning.</li>
+          <li>Add <code>snap: 1 / 3</code> to the scrollTrigger — it'll settle on the nearest step when you stop scrolling.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="spacer">↓ scroll into the pinned section ↓</div>
+
+    <section class="pinned">
+      <div class="scene">
+        <div class="circle"></div>
+        <h2 class="t1">Scroll…</h2>
+        <h2 class="t2">…drives…</h2>
+        <h2 class="t3">…the timeline.</h2>
+        <div class="readout">progress: 0.00</div>
+      </div>
+    </section>
+
+    <div class="spacer">unpinned — the page scrolls normally again</div>
+    <div class="spacer">end</div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

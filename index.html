@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning GSAP</title>
+    <link rel="stylesheet" href="/lessons/shared.css" />
+    <style>
+      .home { max-width: 760px; margin: 0 auto; padding: 60px 20px 80px; }
+      .home h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 0; line-height: 1.05; }
+      .home .lead { color: var(--muted); font-size: 1.1rem; }
+      .home h2 { margin-top: 44px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+      .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+      .list a {
+        display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; align-items: baseline;
+        padding: 14px 16px; border-radius: 10px; text-decoration: none; color: var(--text);
+        background: var(--surface); border: 1px solid var(--line);
+      }
+      .list a:hover { border-color: var(--accent); }
+      .list .n { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+      .list .d { grid-column: 2; color: var(--muted); font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <main class="home">
+      <h1>Learning GSAP</h1>
+      <p class="lead">Work through the lessons in order. Each one is a small page with its own
+        <code>main.js</code> full of comments — open it next to the browser, change numbers, save, watch.</p>
+
+      <h2>Foundations</h2>
+      <ul class="list">
+        <li><a href="/lessons/01-tweens/"><span class="n">01</span><strong>Tweens</strong><span class="d">gsap.to / from / fromTo, eases, stagger</span></a></li>
+        <li><a href="/lessons/02-timelines/"><span class="n">02</span><strong>Timelines</strong><span class="d">Sequencing, the position parameter, and a slider that scrubs a timeline</span></a></li>
+      </ul>
+
+      <h2>ScrollTrigger</h2>
+      <ul class="list">
+        <li><a href="/lessons/03-scrolltrigger-basics/"><span class="n">03</span><strong>ScrollTrigger basics</strong><span class="d">trigger, start / end, markers, toggleActions</span></a></li>
+        <li><a href="/lessons/04-scrub/"><span class="n">04</span><strong>Scrub</strong><span class="d">Let the scrollbar drive the animation</span></a></li>
+        <li><a href="/lessons/05-pin/"><span class="n">05</span><strong>Pinning</strong><span class="d">Hold a section in place while a timeline plays</span></a></li>
+        <li><a href="/lessons/06-horizontal/"><span class="n">06</span><strong>Horizontal scroll</strong><span class="d">Pin + scrub a sideways track, containerAnimation</span></a></li>
+        <li><a href="/lessons/07-callbacks-batch/"><span class="n">07</span><strong>Callbacks &amp; batch</strong><span class="d">onEnter / onLeave, toggleClass, ScrollTrigger.batch reveals</span></a></li>
+      </ul>
+
+      <h2>The other scroll plugins</h2>
+      <ul class="list">
+        <li><a href="/lessons/08-scrollsmoother/"><span class="n">08</span><strong>ScrollSmoother</strong><span class="d">Smooth scrolling + data-speed / data-lag parallax</span></a></li>
+        <li><a href="/lessons/09-observer/"><span class="n">09</span><strong>Observer + ScrollTo</strong><span class="d">One swipe = one section</span></a></li>
+      </ul>
+
+      <h2>Free play</h2>
+      <ul class="list">
+        <li><a href="/sandbox/"><span class="n">✦</span><strong>Sandbox</strong><span class="d">Your own experiment (the files that were here before) — break things here</span></a></li>
+      </ul>
+    </main>
+  </body>
+</html>

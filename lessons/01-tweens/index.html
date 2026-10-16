@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 · Tweens</title>
+    <link rel="stylesheet" href="../shared.css" />
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">01 · Tweens</span>
+      <a class="next" href="../02-timelines/">Next: Timelines →</a>
+    </header>
+
+    <section class="intro">
+      <h1>Tweens</h1>
+      <p class="lead">A <em>tween</em> animates properties of an element from one value to another over time.
+        Every scroll animation you'll build later is just a tween (or timeline) with a <code>scrollTrigger</code> attached,
+        so this is the foundation.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Change the ease in the <code>to</code> demo to <code>"bounce.out"</code>, then <code>"elastic.out(1, 0.3)"</code>.</li>
+          <li>In the stagger demo, change <code>each: 0.1</code> to <code>0.4</code>, then try <code>from: "center"</code>.</li>
+          <li>Add <code>backgroundColor: "#ff6b9a"</code> to any tween — GSAP animates colors too.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button data-demo="to">gsap.to()</button>
+      <button data-demo="from">gsap.from()</button>
+      <button data-demo="fromTo">gsap.fromTo()</button>
+      <button data-demo="stagger">stagger</button>
+      <button data-demo="reset">reset</button>
+    </div>
+
+    <div class="stage">
+      <div class="box">1</div>
+      <div class="box green">2</div>
+      <div class="box pink">3</div>
+      <div class="box yellow">4</div>
+      <div class="box">5</div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

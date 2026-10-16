@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09 · Observer + ScrollTo</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .slide { height: 100vh; display: grid; place-items: center; text-align: center; padding: 60px 20px 20px; }
+      .slide h2 { font-size: clamp(2.5rem, 10vw, 7rem); margin: 0; }
+      .slide:nth-of-type(2) { background: #1c2340; }
+      .slide:nth-of-type(3) { background: #173327; }
+      .slide:nth-of-type(4) { background: #3a1a28; }
+      .slide:nth-of-type(5) { background: #3a300f; }
+      .slide .intro { padding: 0; text-align: left; }
+      .dots { position: fixed; right: 20px; top: 50%; translate: 0 -50%; display: grid; gap: 10px; z-index: 101; }
+      .dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+      .dots span.on { background: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">09 · Observer + ScrollTo</span>
+      <a class="next" href="/sandbox/">Next: your sandbox →</a>
+    </header>
+    <nav class="dots" id="dots"></nav>
+
+    <section class="slide">
+      <div class="intro">
+        <h1>Observer + ScrollTo</h1>
+        <p class="lead"><strong>Observer</strong> listens to wheel / touch / pointer <em>gestures</em> without scrolling anything.
+          <strong>ScrollToPlugin</strong> animates the scroll position. Together: one flick = exactly one section.</p>
+        <div class="try">
+          <h3>Try this (edit main.js)</h3>
+          <ol>
+            <li>Flick your trackpad once. Then change <code>tolerance</code> to <code>50</code> and compare.</li>
+            <li>Change the scroll <code>duration</code> and <code>ease</code> inside <code>goTo()</code>.</li>
+            <li>Remove <code>wheelSpeed: -1</code> — which direction is "up" now?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="slide"><h2>One</h2></section>
+    <section class="slide"><h2>Two</h2></section>
+    <section class="slide"><h2>Three</h2></section>
+    <section class="slide"><h2>Four</h2></section>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 · Horizontal scroll</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .horizontal { height: 100vh; overflow: hidden; background: var(--surface); }
+      .track { display: flex; height: 100%; width: max-content; }
+      .panel { width: 100vw; height: 100%; flex: none; display: grid; place-items: center;
+               font-size: clamp(2rem, 8vw, 6rem); font-weight: 800; }
+      .panel:nth-child(1) { background: #1c2340; }
+      .panel:nth-child(2) { background: #173327; }
+      .panel:nth-child(3) { background: #3a1a28; }
+      .panel:nth-child(4) { background: #3a300f; }
+      .panel .inner { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+      .panel .spinner { width: 90px; height: 90px; border-radius: 16px; background: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">06 · Horizontal scroll</span>
+      <a class="next" href="../07-callbacks-batch/">Next: Callbacks &amp; batch →</a>
+    </header>
+
+    <section class="intro">
+      <h1>Horizontal scroll</h1>
+      <p class="lead">You scroll down, the content moves sideways. There's no magic here: it's a pinned section plus a
+        scrubbed tween that moves a wide "track" to the left. Everything from lessons 04 and 05 combined.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Add a fifth <code>.panel</code> in index.html. The math adjusts on its own.</li>
+          <li>Add <code>snap: 1 / (panels.length - 1)</code> to make it settle on whole panels.</li>
+          <li>Look at the yellow square in panel 4: it uses <code>containerAnimation</code> to trigger based on <em>horizontal</em> position.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="spacer">↓ scroll ↓</div>
+
+    <section class="horizontal">
+      <div class="track">
+        <div class="panel">One</div>
+        <div class="panel">Two</div>
+        <div class="panel">Three</div>
+        <div class="panel"><div class="inner"><div class="spinner"></div>Four</div></div>
+      </div>
+    </section>
+
+    <div class="spacer">back to vertical</div>
+    <div class="spacer">end</div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

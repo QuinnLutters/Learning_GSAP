@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 · ScrollTrigger basics</title>
+    <link rel="stylesheet" href="../shared.css" />
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">03 · ScrollTrigger basics</span>
+      <a class="next" href="../04-scrub/">Next: Scrub →</a>
+    </header>
+
+    <section class="intro">
+      <h1>ScrollTrigger basics</h1>
+      <p class="lead">Attach a <code>scrollTrigger</code> to a tween and it waits for a scroll position instead of playing
+        immediately. The coloured lines on the right are <strong>markers</strong>: green = start, red = end.
+        The animation happens when the element's line crosses the viewport's line.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Scroll slowly past each box, then scroll back up. Compare the four <code>toggleActions</code>.</li>
+          <li>Change box 1's <code>start</code> to <code>"top center"</code> and watch the green markers move.</li>
+          <li>Set <code>once: true</code> on box 4 — it animates the first time and then the trigger is removed.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="spacer">↓ scroll ↓</div>
+
+    <div class="stage"><div class="box big b1">play none none none</div></div>
+    <div class="stage"><div class="box big green b2">play none none reverse</div></div>
+    <div class="stage"><div class="box big pink b3">play pause resume reset</div></div>
+    <div class="stage"><div class="box big yellow b4">restart none none none</div></div>
+
+    <div class="spacer">end</div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

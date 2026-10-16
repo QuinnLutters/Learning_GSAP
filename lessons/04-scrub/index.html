@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 · Scrub</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .progress-bar { position: fixed; left: 0; top: 41px; height: 4px; width: 100%;
+                      background: var(--green); transform-origin: left center; transform: scaleX(0); z-index: 101; }
+      .lane { display: flex; align-items: center; gap: 20px; width: min(900px, 92vw); margin: 0 auto 28px; }
+      .lane .label { width: 120px; flex: none; font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--muted); }
+      .lane .track { flex: 1; border-bottom: 1px dashed var(--line); padding: 8px 0; }
+      .lane .box { width: 70px; height: 70px; }
+      .lanes { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+    </style>
+  </head>
+  <body>
+    <header class="lesson-bar">
+      <a href="/">← All lessons</a><span class="title">04 · Scrub</span>
+      <a class="next" href="../05-pin/">Next: Pinning →</a>
+    </header>
+    <div class="progress-bar"></div>
+
+    <section class="intro">
+      <h1>Scrub</h1>
+      <p class="lead">With <code>scrub</code>, the animation stops having its own duration. Its progress is tied to scroll:
+        0% at <code>start</code>, 100% at <code>end</code>. Scroll back and it rewinds. The green bar at the top is a scrub
+        over the whole page.</p>
+      <div class="try">
+        <h3>Try this (edit main.js)</h3>
+        <ol>
+          <li>Scroll the lanes section quickly and stop suddenly. See how <code>scrub: 3</code> "catches up" slowly.</li>
+          <li>Give the <code>scrub: true</code> tween an <code>ease: "bounce.out"</code>. (Scrubbed tweens default to <code>ease: "none"</code> — which is usually what you want.)</li>
+          <li>Change the lanes' <code>end</code> to <code>"+=300"</code>. Shorter scroll distance = faster animation.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="spacer">↓ scroll ↓</div>
+
+    <section class="lanes">
+      <div class="lane"><span class="label">scrub: true</span><div class="track"><div class="box l1"></div></div></div>
+      <div class="lane"><span class="label">scrub: 1</span><div class="track"><div class="box green l2"></div></div></div>
+      <div class="lane"><span class="label">scrub: 3</span><div class="track"><div class="box pink l3"></div></div></div>
+    </section>
+
+    <div class="spacer">keep scrolling</div>
+    <div class="spacer">end</div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
